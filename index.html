@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Feliz cumpleaños, mami — una carta para ti</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Lora:ital,wght@0,400;0,500;1,400;1,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<canvas id="petals-canvas" aria-hidden="true"></canvas>
+
+<div id="music-player" aria-hidden="true"></div>
+<audio id="soundtrack" src="assets/audio/thousand_years.m4a" loop preload="auto" aria-hidden="true"></audio>
+
+<div class="gate" id="gate">
+  <div class="gate-inner">
+    <svg class="gate-flourish" width="110" height="22" viewBox="0 0 120 24" fill="none" stroke="currentColor" stroke-width="1.1" stroke-linecap="round" aria-hidden="true">
+      <path d="M2 12 C 30 2, 90 2, 118 12"/>
+      <path d="M22 9 C 24 4, 30 3, 32 6"/>
+      <path d="M50 6 C 52 2, 58 1, 60 4"/>
+      <path d="M80 9 C 82 4, 88 3, 90 6"/>
+      <circle cx="60" cy="12" r="1.6" fill="currentColor" stroke="none"/>
+    </svg>
+    <h1 class="gate-title">Para mi Mami</h1>
+    <p class="gate-sub">Una carta escrita con todo nuestro cariño, aunque la distancia a veces nos separe.</p>
+    <button class="gate-button" id="openBtn">Abrir la carta</button>
+  </div>
+</div>
+
+<button class="music-toggle is-hidden" id="musicToggle" type="button" aria-label="Silenciar música" aria-pressed="false">
+  <svg class="icon-playing" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+    <path d="M11 5 6 9H2v6h4l5 4V5Z"/>
+    <path d="M15.5 8.5a5 5 0 0 1 0 7"/>
+    <path d="M18.5 5.5a9 9 0 0 1 0 13"/>
+  </svg>
+  <svg class="icon-muted" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+    <path d="M11 5 6 9H2v6h4l5 4V5Z"/>
+    <path d="m16 9 5 6"/>
+    <path d="m21 9-5 6"/>
+  </svg>
+</button>
+
+<main class="card" id="card" aria-hidden="true">
+
+  <section class="hero">
+    <div class="hero-media reveal">
+      <img src="assets/images/hero.jpg" alt="Retrato familiar">
+    </div>
+    <div class="hero-text reveal">
+      <h1 class="hero-title">Feliz cumpleaños,<br>mami</h1>
+      <p class="hero-sub">Tres cartas, un mismo amor: la de John, la de Esteban, la de Helena, para celebrar tu vida hoy y siempre.</p>
+      <svg class="hero-flourish" width="110" height="22" viewBox="0 0 120 24" fill="none" stroke="currentColor" stroke-width="1.1" stroke-linecap="round" aria-hidden="true">
+        <path d="M2 12 C 30 2, 90 2, 118 12"/>
+        <path d="M22 9 C 24 4, 30 3, 32 6"/>
+        <path d="M50 6 C 52 2, 58 1, 60 4"/>
+        <path d="M80 9 C 82 4, 88 3, 90 6"/>
+        <circle cx="60" cy="12" r="1.6" fill="currentColor" stroke="none"/>
+      </svg>
+    </div>
+  </section>
+
+  <section class="letters">
+    <div class="tabs" role="tablist" aria-label="Cartas">
+      <button class="tab active" data-tab="todos" role="tab" aria-selected="true">
+        <span class="monogram m-todos">T</span><span class="tab-label">Todos</span>
+      </button>
+      <button class="tab" data-tab="john" role="tab" aria-selected="false">
+        <span class="monogram m-john">J</span><span class="tab-label">John</span>
+      </button>
+      <button class="tab" data-tab="esteban" role="tab" aria-selected="false">
+        <span class="monogram m-esteban">E</span><span class="tab-label">Esteban</span>
+      </button>
+      <button class="tab" data-tab="helena" role="tab" aria-selected="false">
+        <span class="monogram m-helena">H</span><span class="tab-label">Helena</span>
+      </button>
+    </div>
+
+    <div class="letter-panels">
+      <article class="letter active" data-panel="todos">
+        <p class="lede">Mami, feliz cumpleaños.</p>
+        <p>Hoy queremos celebrar tu vida y agradecerle a Dios por permitirnos tenerte y compartir contigo un año más. Aunque en algunos momentos la distancia no nos permita estar todos juntos como quisiéramos, queremos que sientas todo nuestro amor y que sepas que siempre estás presente en nuestros corazones.</p>
+        <p>Deseamos que Dios te bendiga siempre, te conceda mucha salud, alegría, tranquilidad y muchos años más de vida. Que cada nuevo año esté lleno de momentos bonitos, sueños cumplidos y razones para sonreír.</p>
+        <p>Te amamos muchísimo, mami. Feliz cumpleaños.</p>
+        <p class="signature">Tu hermosa Familia</p>
+      </article>
+
+      <article class="letter" data-panel="john">
+        <p class="lede">Caro, feliz cumpleaños.</p>
+        <p>Que el Dios del cielo te siga bendiciendo, protegiendo y regalando muchos años más de vida, llenos de salud, amor, tranquilidad y felicidad. Que nunca te falten motivos para sonreír y que cada día puedas sentir todo el amor de las personas que te queremos.</p>
+        <p>Gracias por todo lo que eres y por todo lo que has hecho por nosotros. Hoy deseo de corazón que Dios siga guiando tus pasos y llenando tu vida de muchas bendiciones.</p>
+        <p>Te quiero mucho y espero que tengas un cumpleaños muy feliz.</p>
+        <p class="signature">John</p>
+      </article>
+
+      <article class="letter" data-panel="esteban">
+        <p class="lede">Mami, feliz cumpleaños.</p>
+        <p>Desde aquí donde estoy te deseo de todo corazón una larga vida, llena de salud, felicidad y muchas bendiciones. Aunque estés lejos y no pueda acompañarte en este día como quisiera, eso no significa que estés lejos de mi corazón ni que deje de desearte todo lo mejor.</p>
+        <p>Espero que Dios te bendiga siempre, te cuide, te dé muchos años más de vida y nos permita seguir compartiendo muchos momentos juntos.</p>
+        <p>Te amo mucho, mami. Feliz cumpleaños y disfruta mucho tu día.</p>
+        <p class="signature">Esteban</p>
+      </article>
+
+      <article class="letter" data-panel="helena">
+        <p class="lede">Feliz cumpleaños, mi mami hermosa.</p>
+        <p>Eres la mejor mami del mundo y quiero que sepas cuánto te amo. Aunque estés lejos, siempre estás en mi corazón y pienso en ti con muchísimo cariño.</p>
+        <p>Le pido a Dios que te bendiga, te cuide, te dé mucha salud y te permita cumplir muchos años más rodeada de amor y felicidad.</p>
+        <p>Te amo muchísimo, mami. Espero que tengas un cumpleaños muy bonito.</p>
+        <p class="signature">Helena</p>
+      </article>
+    </div>
+  </section>
+
+  <footer class="closing">
+    <svg class="closing-flourish" width="110" height="22" viewBox="0 0 120 24" fill="none" stroke="currentColor" stroke-width="1.1" stroke-linecap="round" aria-hidden="true">
+      <path d="M2 12 C 30 2, 90 2, 118 12"/>
+      <path d="M22 9 C 24 4, 30 3, 32 6"/>
+      <path d="M50 6 C 52 2, 58 1, 60 4"/>
+      <path d="M80 9 C 82 4, 88 3, 90 6"/>
+      <circle cx="60" cy="12" r="1.6" fill="currentColor" stroke="none"/>
+    </svg>
+    <p>Con todo nuestro amor, tu familia.</p>
+  </footer>
+
+</main>
+
+<script src="js/script.js"></script>
+
+</body>
+</html>
